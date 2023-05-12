@@ -1,0 +1,83 @@
+@use '../base/config' as con;
+@use '../base/mixins' as mix;
+
+.detail{
+    background-color: con.$white2;
+    padding: con.$s32;
+    margin: con.$s16 0 0;
+    border-radius: con.$w4;
+    &__row{}
+    &__left{
+        @include mix.mq(991,min){
+            display: grid;
+            grid-template-columns: 680px 1fr;
+        }
+    }
+    &__right{
+        width: 100%;
+        max-width: 100%;
+        @include mix.mq(991,min){
+            max-width: 680px;
+        }
+    }
+    &__thumbnail{
+        margin: 0 0 5vh;
+        @include mix.mq(991,min){
+            margin: 0 0 10vh;
+        }
+        figure{
+            width: 100%;
+            height: 100%;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    &__description{
+        h2{
+            font-size: con.$f28;
+            margin: 0 0 con.$s32;
+            line-height: 1;
+            font-weight: 400;
+        }
+        p{
+            color: con.$gray;
+        }
+        .btn{
+            margin: con.$s32 0 0;
+            @include mix.mq(991,min){
+                display: none;
+            }
+        }
+    }
+
+    &__meta{
+        p{
+            font-size: con.$f14;
+            margin: 0 0 con.$s16;
+            color: con.$graniteGray;
+        }
+        h1{
+            font-size: con.$f24;
+            font-weight: 700;
+            line-height: 1.1;
+            margin: 0 0 con.$s32;
+        }
+        h3{
+            font-size: con.$f46;
+            margin: 0 0 con.$s32;
+            font-weight: 400;
+            sup{
+                font-weight: 400;
+                font-size: con.$f24;
+            }
+        }
+        .btn{
+            display: none;
+            @include mix.mq(991,min){
+                display: block;
+            }
+        }
+    }
+}

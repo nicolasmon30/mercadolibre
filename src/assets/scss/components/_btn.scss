@@ -1,0 +1,11 @@
+@use '../base/config' as con;
+.btn{
+    width: 100%;
+    padding: 10px 0;
+    background-color: con.$bleuDeFrance;
+    color: con.$white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    border-radius: con.$w4;
+}

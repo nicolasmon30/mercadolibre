@@ -1,0 +1,90 @@
+@use '../base/config' as con;
+@use '../base/mixins' as mix;
+.product{
+    padding: con.$s16 0;
+    cursor: pointer;
+    @include mix.mq(501,min){
+        display: grid;
+        grid-column-gap: con.$s16;
+        grid-template-columns: con.$w18 calc(100% - 196px);
+    }
+    &:not(:last-child){
+        border-bottom: thin solid con.$white;
+    }
+    &__thumbnail{
+        width: con.$w18;
+        height: con.$w18;
+        border-radius: con.$w4;
+        overflow: hidden;
+        margin: 0 auto;
+        @include mix.mq(501,min){
+            width: 100%;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__body{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 20px 0 0;
+        flex-direction: column;
+        @include mix.mq(767,min){
+            justify-content: space-between;
+            flex-direction: row;
+        }
+        @include mix.mq(991,min){
+            padding: 20px calc(con.$s32 * 2) 0 0;  
+        }
+    }
+    &__description{
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        @include mix.mq(501,min){
+            display: block;
+            flex-direction: unset;
+        }
+        @include mix.mq(767,min){
+            max-width: 380px;
+        }
+        h3{
+            font-weight: 400;
+            font-size: con.$f18;
+        }
+    }
+    &__price{
+        margin: con.$s16 0 0;
+        order: 2;
+        @include mix.mq(501,min){
+            margin: 0 0 con.$s32;
+            order: unset;
+        }
+        p{
+            font-size: con.$f24;
+            line-height: 1;
+        }
+        &:has(img){
+            display: inline-flex;
+            column-gap: 10px;
+            align-items: center;
+            img{
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    &__location{
+        padding: con.$s32 0 0;
+        @include mix.mq(767,min){
+            padding: con.$s16;
+        }
+        p{
+            font-size: con.$f12;
+            color: con.$gray;
+        }
+    }
+}

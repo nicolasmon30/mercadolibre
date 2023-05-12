@@ -1,0 +1,32 @@
+@use '../base/config' as con;
+.search{
+    form{
+        display: grid;
+        grid-template-columns: calc(100% - 50px) 50px;
+    }
+    input{
+        font-size: con.$f18;
+        color: con.$black;
+        border-radius: 2px;
+        background-color: con.$white2;
+        box-shadow: 0 1px 2px 0 rgba(con.$black,.2);
+        height: 40px;
+        padding: 10px 60px 10px 15px;
+        border: 0;
+        &::placeholder,
+        &::-moz-placeholder{
+            font-size: con.$f18;
+        }
+    }
+    button{
+        border: 0;
+        display: grid;
+        place-items: center;
+        background-color: con.$white;
+        box-shadow: 0 1px 2px 0 rgba(con.$black,.2);
+        img{
+            width: calc(100% / 2.5);
+            height: auto;
+        }
+    }
+}

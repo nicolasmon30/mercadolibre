@@ -1,0 +1,22 @@
+// MIXIN PARA MANEJAR LOS MEDIA QUERIES
+
+
+@mixin mq($media: 767, $type: max){
+	@if type-of($media) == number {
+		@if unitless($media) {
+			@media only screen and (#{$type}-width: #{$media}px){
+				@content;
+			}
+		}
+	} @else {
+		@if type-of(map-get($media)) == number {
+			@media only screen and (#{$type}-width: #{map-get($media)px}){
+				@content;
+			}
+		} @else if type-of(map-get($media)) == string {
+			@media #{map-get($media)}{
+				@content;
+			}
+		}
+	}
+}

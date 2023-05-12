@@ -1,0 +1,8 @@
+@use '../base/config' as con;
+
+.searchLayout{
+    background-color: con.$white2;
+    padding: 0 con.$s16;
+    margin: con.$s16 0 0;
+    border-radius: con.$w4;
+}

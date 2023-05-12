@@ -1,0 +1,22 @@
+// BASE
+@use '../scss/base/generals';
+@use '../scss/base/fonts';
+
+
+// LAYOUT
+@use '../scss/layout/header';
+@use '../scss/layout/container';
+
+
+// COMPONENTS
+
+@use '../scss/components/searchBar';
+@use '../scss/components/productCard';
+@use '../scss/components/breadcrumb';
+@use '../scss/components/btn';
+
+
+// PAGES
+
+@use '../scss/pages/searchPage';
+@use '../scss/pages/detail';

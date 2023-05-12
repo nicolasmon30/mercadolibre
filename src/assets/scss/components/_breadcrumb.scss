@@ -1,0 +1,25 @@
+@use '../base/config' as con;
+@use '../base/mixins' as mix;
+
+.breadcrumb{
+    list-style: none;
+    list-style-type: none;
+    margin: con.$s16 0 0;
+    display: none;
+    @include mix.mq(767,min){
+        display: flex;
+    }
+    li{
+        font-size: con.$f14;
+        color: con.$gray;
+        &:not(:last-child){
+            &::after{
+                content: ">";
+                padding: 0 8px;
+            }
+        }
+        &:last-child{
+            font-weight: 700;
+        }
+    }
+}

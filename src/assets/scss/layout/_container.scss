@@ -1,0 +1,11 @@
+@use '../base/config' as con;
+@use '../base/mixins' as mix;
+
+.container{
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+    @include mix.mq(991,min){
+        max-width: con.$cSize;
+    }
+}

@@ -1,0 +1,12 @@
+@use '../base/config' as con;
+html, * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Proxima Nova';
+    font-size: con.$f16;
+    color: con.$black;
+}
+body{
+    background-color: con.$white;
+}

@@ -1,0 +1,16 @@
+@use '../base/config' as con;
+header{
+    padding: 13px 0 8px;
+    background-color: con.$yellow;
+    .container{
+        display: grid;
+        grid-template-columns:63px calc(100% - 87px);
+        grid-column-gap: 24px;
+    }
+    .logo{
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}
