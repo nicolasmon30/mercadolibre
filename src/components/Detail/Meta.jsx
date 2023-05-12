@@ -1,5 +1,7 @@
-import React from 'react'
-
+/* 
+  Recibo por propiedad la data del producto a detalle a mostrar. 
+  Esta propiedad product viene de la page Detail y con esta propiedad accedo a las propiedades para obtener el titulo, la cantidad vendida y el precio. 
+*/
 export const Meta = ({product}) => {
 
   return (

@@ -1,3 +1,4 @@
+/*  Import el componente SearchBar el cual continene el input y la logica para poder filtrar */
 import { SearchBar } from "../SearchBar/SearchBar"
 
 export const Header = () => {

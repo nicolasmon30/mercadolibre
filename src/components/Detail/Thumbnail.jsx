@@ -1,5 +1,7 @@
-import React from 'react'
-
+/* 
+  Recibo por propiedad la data del producto a detalle a mostrar. 
+  Esta propiedad product viene de la page Detail y con esta propiedad accedo a las propiedades para obtener el thumbnail. 
+*/
 export const Thumbnail = ({product}) => {
   return (
     <>

@@ -1,6 +1,6 @@
-import React from 'react'
 
-export const Description = ({productDescription}) => {
+/* Recibo por propiedad la data del producto a detalle a mostrar esta propiedad productDescription viene de la page Detail y con esta propiedad accedo a las propiedades para obtener la descripcion de el producto */
+export const Description = ({ productDescription }) => {
     return (
         <>
             <div className="detail__description">

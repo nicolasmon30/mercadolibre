@@ -1,3 +1,4 @@
+/* Exporto el componente Breadcrumb para poderlo utilizar en diferentes sitios */
 export const Breadcrumb = () => {
   return (
     <>
