@@ -16,7 +16,7 @@ const useProducts = create((set) => ({
       /**
        * Ejecutamos nuestro llamado al endpoit enviando como paremtro en la url el valor de la busqueda realizada
        */
-      const response = await fetch(`${process.env.REACT_APP_API_SEARCH}?q=${param}`);
+      const response = await fetch(`${process.env.REACT_APP_API_GENERAL}?q=${param}`);
       /**
       * La respuesta la formateamos a json para convertirla en objeto y poder trabajarla de mejor manera y esto lo gialamos a productDetail
       */
@@ -24,7 +24,7 @@ const useProducts = create((set) => ({
       /**
        * La respuesta como bienen muchisimos datos con .splice limitamos a que la respuesta solo nos de 4 elementos para trabajar
        */
-      const products = await temp.results.slice(0, 4);
+      const products = await temp.products;
       /**
        * Actualizamos el valor de nuestro estado global product con la respuesta de el endpoint
        */

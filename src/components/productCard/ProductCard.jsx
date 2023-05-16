@@ -15,7 +15,6 @@ import { useNavigate } from "react-router-dom";
 export const ProductCard = ({ product }) => {
     const navigate = useNavigate();
 
-
     const goToDetail = (idProduct) => {
         navigate(`/items/${idProduct}`);
     }
@@ -25,19 +24,20 @@ export const ProductCard = ({ product }) => {
         <>
             <article className="product" onClick={() => goToDetail(product.id)}>
                 <figure className="product__thumbnail">
-                    <img src={product.thumbnail} alt={product.title} title={product.title} />
+                    <img src={product.picture} alt={product.title} title={product.title} />
                 </figure>
                 <div className="product__body">
                     <div className="product__description">
                         <div className="product__price">
-                            <p>$ {product.price}</p>
-                            <img src="../src/assets/images/ic_shipping.png" alt="" />
+                            <p>{product.price.currency} {product.price.amount}</p>
+                            { product.free_shipping  && <img src="../src/assets/images/ic_shipping.png" alt="" />}
+        
                         </div>
                         <h3>{product.title}</h3>
                     </div>
                     <div className="product__location">
                         <p>
-                            {product.address.city_name}
+                            {product.address}
                         </p>
                     </div>
                 </div>

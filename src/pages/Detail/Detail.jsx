@@ -1,7 +1,7 @@
 /**
  * Importacion de Hooks, componentes y estore
  */
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useDetailProductStore } from "../../store/ProducDetail";
 import { useParams } from "react-router-dom";
 import { Breadcrumb } from "../../components/Breadcrumb/Breadcrumb";
@@ -17,13 +17,11 @@ export const Detail = () => {
    * fetchData = funcion de el store encargada de hacer el consumo de el api para obtener la data de del detalle y setear en el estado product detail
    * getDescription = funcion que con el id del producto actual me trae la descipcion del actual producto , es consumo de api
    */
-  const { productDetail, productDescription ,fetchData , getDescription } = useDetailProductStore();
+  const { productDetail,fetchData} = useDetailProductStore();
   /**
    * Inicializo un estado local para obtener el id que viene por la url 
    */
   const [id, setId] = useState(useParams().id);
-
-
   /**
    * Utilizamos useEffect para ejecutar las funciones de fetchData y getDescription cuando se prouzca un cambio en el id
    */
@@ -31,14 +29,14 @@ export const Detail = () => {
     /**
      * Comporbamos que el id no es null. Si el id es válido, llamamos a la función fetchData y a la función getDescription, pasando el id como parámetro para obtener información específica de un producto.
      */
-    if (id) {
+    if(id){
       fetchData(id);
-      getDescription(id);
     }
-  }, [id, fetchData]);
-
+  }, [id,fetchData]);
   return (
     <>
+    {
+      productDetail &&
       <div className="container">
         <Breadcrumb  />
         <div className="detail">
@@ -48,11 +46,13 @@ export const Detail = () => {
               <Meta product={productDetail} />
             </div>
             <div className="detail__right">
-              <Description product={productDetail}  productDescription={productDescription} />
+              <Description product={productDetail}/>
             </div>
           </div>
         </div>
-      </div>
+      </div> 
+    }
+      
     </>
   )
 }

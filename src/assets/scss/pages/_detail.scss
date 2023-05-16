@@ -6,11 +6,11 @@
     padding: con.$s32;
     margin: con.$s16 0 0;
     border-radius: con.$w4;
-    &__row{}
     &__left{
         @include mix.mq(991,min){
             display: grid;
-            grid-template-columns: 680px 1fr;
+            grid-template-columns: 667px 1fr;
+            grid-column-gap: 13px;
         }
     }
     &__right{
